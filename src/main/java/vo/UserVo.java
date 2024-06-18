@@ -2,6 +2,12 @@ package vo;
 
 public class UserVo {
 
+	/* Vo
+	 * -private필드(은닉)
+	 * -기본생성자
+	 * -getters/setters
+	 * -toString, (equals,hashcode)
+	 * */
 	private int no;
 	private String name;
 	private String email;

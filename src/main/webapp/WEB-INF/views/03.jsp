@@ -9,13 +9,15 @@
 <body>
 	<h1>파라미터</h1>
 	
-	<!-- localhost:8088/eljstl/03?id=you&pw=1111&name=재석&num1=100&num2=200 -->	
+	<!-- localhost:8080/eljstl/03?id=you&pw=1111&name=재석&num1=100&num2=200 -->	
 	
 	<h2>자바문법 parameter값 꺼내쓰기</h2>	
 	<% 
 	String id= request.getParameter("id");
 	String pw= request.getParameter("pw");
 	String name= request.getParameter("name");
+	/*url 키=값으로 넘어오는 파라미터의 데이터 타입은 String이므로
+			wrapper 방식으로 int값 변환해줘야함(캐스팅)*/
 	int num1 = Integer.parseInt(request.getParameter("num1"));
 	int num2 = Integer.parseInt(request.getParameter("num2"));
 	%>
@@ -29,6 +31,15 @@
 		
 	<h2>el parameter값 꺼내쓰기</h2>
 	
+	<ul>
+		<li>id : ${param.id }</li>
+		<li>pw : ${param.pw }</li>
+		<li>name : ${param.name }</li>
+		<li>num1 : ${param.num1 }</li>
+		<li>num2 : ${param.num2 }</li>
+		<li>num1+num2 : ${param.num1 + param.num2 }</li>
+		<!-- el은 타입 변환 필요없이 작성 가능! -->
+	</ul>
 
 
 
